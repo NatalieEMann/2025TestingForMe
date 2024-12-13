@@ -26,39 +26,19 @@ public class MotorSubsystem extends SubsystemBase {
 		m_SparkMaxOne.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 	}
 
-	/**
-	 * Sets the speed of the intake motor.
-	 * 
-	 * @param speed The speed.
-	 */
 	public void setSpeed(double speed) {
 		m_SparkMaxOne.set(speed);
 	}
 
-	/**
-	 * Creates a command to reverse the intake.
-	 * 
-	 * @return The command.
-	 */
-	public Command reverseIntakeCommand() {
+	public Command reverseMotor() {
 		return runOnce(() -> setSpeed(-1));
 	}
 
-	/**
-	 * Creates a command to spin the intake forward.
-	 * 
-	 * @return The command.
-	 */
-	public Command forwardIntakeCommand() {
+	public Command forwardMotor() {
 		return runOnce(() -> setSpeed(1));
 	}
 
-	/**
-	 * Creates a command to stop the intake.
-	 * 
-	 * @return The command.
-	 */
-	public Command stopIntakeCommand() {
+	public Command stopMotor() {
 		return runOnce(() -> setSpeed(0));
 	}
 
