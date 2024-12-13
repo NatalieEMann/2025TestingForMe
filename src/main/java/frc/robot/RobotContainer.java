@@ -5,7 +5,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Commands.SpinMotor;
 import frc.robot.Subsystems.MotorSubsystem;
 
 public class RobotContainer {
@@ -19,6 +18,6 @@ public class RobotContainer {
 	}
 
 	public Command getAutonomousCommand() {
-		return new SpinMotor(m_motorSubsystem);
+		return m_motorSubsystem.spinMotorCommand();
 	}
 }
